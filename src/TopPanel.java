@@ -7,8 +7,6 @@ public class TopPanel extends JPanel {
 
     Bottom[] mass_b = new Bottom[4];
     String[] s = {"Year", "<","Month",">"};
-    int year;
-    int month;
 
     public TopPanel(){
 
@@ -16,8 +14,6 @@ public class TopPanel extends JPanel {
         setMaximumSize(new Dimension(400,50));
         setLayout(new GridLayout(1,4));
         init();
-        thisDate();
-        showDate();
     }
 
     public void init(){
@@ -28,13 +24,7 @@ public class TopPanel extends JPanel {
         }
     }
 
-    public void thisDate(){
-        Calendar calendar = Calendar.getInstance();
-        year = calendar.get(Calendar.YEAR);
-        month = calendar.get(Calendar.MONTH);
-    }
-
-    public void showDate(){
+    public void showDate(int month, int year){
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, month);
@@ -43,4 +33,5 @@ public class TopPanel extends JPanel {
         mass_b[0].setText(sd_year.format(calendar.getTime()));
         mass_b[2].setText(sd_month.format(calendar.getTime()));
     }
+
 }

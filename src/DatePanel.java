@@ -12,8 +12,8 @@ public class DatePanel extends JPanel {
 
     public DatePanel(int month, int year){
 
-        setPreferredSize(new Dimension(400,250));
-        setMaximumSize(new Dimension(400,250));
+        setPreferredSize(new Dimension(400,300));
+        setMaximumSize(new Dimension(400,300));
         setLayout(new GridLayout(7,7));
 
         this.month = month;

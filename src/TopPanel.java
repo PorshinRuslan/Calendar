@@ -20,6 +20,7 @@ public class TopPanel extends JPanel {
         for(int i=0; i<mass_b.length; i++){
             mass_b[i] = (new Bottom());
             add(mass_b[i]);
+            mass_b[i].asTitle();
             mass_b[i].setText(s[i]);
         }
     }

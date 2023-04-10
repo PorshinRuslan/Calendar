@@ -9,6 +9,8 @@ public class CenterPane extends JPanel {
     }
 
     public void showDatePanel(int month, int year){
+        removeAll();
+        revalidate();
         add(new DatePanel(month,year));
     }
 }

@@ -27,44 +27,41 @@ public class RightPanel extends JPanel {
 
         add(centerPanel);
         centerPanel.showDatePanel(month,year);
-
-        System.out.println(month);
-
     }
 
     public void thisDate(){
         Calendar calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
-    }
+        }
 
     private void bottomAction() {
 
         topPanel.mass_b[1].addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                if(month == 1){
-                    month = 12;
+                if(month == 0){
+                    month = 11;
                     year--;
                 }else{
                     month--;
                 }
                 topPanel.showDate(month,year);
-                //centerPanel.showDatePanel(month,year);
+                centerPanel.showDatePanel(month,year);
             }
         });
 
         topPanel.mass_b[3].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(month == 12){
-                    month = 1;
+                if(month == 11){
+                    month = 0;
                     year++;
                 }else{
                     month++;
                     System.out.println(month);
                 }
                 topPanel.showDate(month,year);
-                //centerPanel.showDatePanel(month,year);
+                centerPanel.showDatePanel(month,year);
             }
         });
     }
